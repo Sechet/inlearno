@@ -1,0 +1,15 @@
+{
+  "name": "inlearno",
+  "version": "1.0.0",
+  "description": "Test for Inlearno",
+  "main": "index.js",
+  "repository": "https://Sechet@bitbucket.org/Sechet/inlearno.git",
+  "author": "Albert Efremov <mamashoe@mail.ru>",
+  "license": "MIT",
+  "scripts": {
+      "start": "concurrently \"cd server && yarn start\" \"cd client && yarn serve\""
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
+  }
+}

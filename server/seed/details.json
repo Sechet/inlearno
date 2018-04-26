@@ -1,0 +1,37 @@
+[
+	{
+		"name": "Байкаин",
+		"description": "Село в Фёдоровском районе Костанайской области Казахстана. Входит в состав Ленинского сельского округа.",
+		"image": "http://quist.pro/assets/images/books/sverdlobl_17.s.3_img/sargaya_1.jpg",
+		"latitude": 54.184022,
+		"longitude": 63.305628
+	},
+	{
+		"name": "Крутоярский",
+		"description": "Поселок в Октябрьском районе Челябинской области. Административный центр Крутоярского сельского поселения.",
+		"image": "http://labaziuk.com/static/news/sm/Ivankivci-ta-Tarnaruda-vidznachili-hramovi-svyata.jpg",
+		"latitude": 54.195790,
+		"longitude": 63.174525
+	},
+	{
+		"name": "Барсучье",
+		"description": "Село в Октябрьском районе Челябинской области России.",
+		"image": "https://t3.ftcdn.net/jpg/00/85/40/12/240_F_85401245_T1zG9JrBmkRWwLeOBi7ViKRnCmJyjpq2.jpg",
+		"latitude": 54.448732,
+		"longitude": 62.641709
+	},
+	{
+		"name": "Октябрьское",
+		"description": "Село, административный центр Октябрьского района Челябинской области России.",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/KosmoDemianNordovka.jpg/360px-KosmoDemianNordovka.jpg",
+		"latitude": 54.405878,
+		"longitude": 62.725003
+	},
+	{
+		"name": "Кочердык",
+		"description": "Село в Октябрьском районе Челябинской области. Административный центр Кочердыкского сельского поселения.",
+		"image": "http://quist.pro/assets/images/books/sverdlobl_10.k.19_img/kungurka_4.jpg",
+		"latitude": 54.572165,
+		"longitude": 62.981560
+	}
+]

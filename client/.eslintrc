@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:vue/essential",
+    "@vue/standard"
+  ],
+  "rules": {
+      "indent": [2, "tab"],
+      "no-tabs": 0
+  }
+}
