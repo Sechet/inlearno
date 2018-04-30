@@ -17,7 +17,7 @@
 				+e('tr')(
 					v-for='item in getMapData'
 					:key='item.id'
-					@click='showModal(item.id)'
+					@click='initDetails(item.id)'
 				).row
 					+e('td').item {{item.id}}
 					+e('td').item {{item.name}}
@@ -38,9 +38,12 @@ export default {
 		getDataMixin
 	],
 	methods: {
-		showModal (data) {
+		initDetails (data) {
 			this.$router.push({
-				query: {id: data}
+				name: 'modal',
+				params: {
+					id: data
+				}
 			})
 		}
 	}

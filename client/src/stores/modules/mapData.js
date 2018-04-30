@@ -7,9 +7,6 @@ const state = {
 }
 
 const getters = {
-	getData: state => {
-		return state.data
-	},
 	getDetailsById: state => id => {
 		return state.details.find(item => item.id === id)
 	}
@@ -35,11 +32,11 @@ const actions = {
 			console.log(err)
 		}
 	},
-	async setDetails ({commit}, id) {
+	async setDetails ({commit}, payload) {
 		try {
-			const res = state.details.find(item => item.id === id)
+			const res = state.details.find(item => item.id === payload)
 			if (!res) {
-				const {data} = (await getDataService.getDetails(id))
+				const {data} = (await getDataService.getDetails(payload))
 				commit('SET_DETAILS', data)
 			}
 		} catch (err) {

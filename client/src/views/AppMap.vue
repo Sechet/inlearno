@@ -2,6 +2,7 @@
 	include ./../tools/pug/mixins.pug
 	+b.map
 		AppGoogle
+			router-view
 </template>
 
 <script>

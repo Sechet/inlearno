@@ -3,18 +3,16 @@
 	.index
 		AppTable
 		transition(name='fade')
-			AppModal(v-if='Number(this.$route.query.id)')
+			router-view
 </template>
 
 <script>
 import AppTable from './../components/AppTable'
-import AppModal from './../components/AppModal'
 
 export default {
 	name: 'AppIndex',
 	components: {
-		AppTable,
-		AppModal
+		AppTable
 	}
 }
 </script>

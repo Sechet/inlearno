@@ -1,6 +1,6 @@
 <template lang='pug'>
 	include ./../tools/pug/mixins.pug
-	+b.map
+	+b.google
 		AppSpinner(v-if='getMapData.length == 0')
 		GmapMap(
 			v-else
@@ -14,32 +14,14 @@
 				:position='{lat:marker.latitude, lng:marker.longitude}'
 				:clickable='true'
 				:draggable='true'
-				@click='toggleInfoWindow(index)'
+				@click='initDetails(index)'
 			)
-			GmapInfoWindow(
-				v-if='setMapDetails'
-				:options='infoOptions'
-				:position='{lat: this.setMapDetails.latitude, lng: this.setMapDetails.longitude}'
-				:opened='!!setMapDetails'
-				@closeclick='closeWindow'
-			)
-				+e.wrapper
-					+e.item_img
-						img(
-							:src='setMapDetails.image'
-							:alt='setMapDetails.name'
-						).map__img
-					+e.item_content
-						+e('h3').name
-							| {{setMapDetails.name}}
-						+e('p').description
-							| {{setMapDetails.description}}
+			slot
 </template>
 
 <script>
-import getDataMixin from './../mixins/getDataMixin'
-import setDetailsMixin from './../mixins/setDetailsMixin'
 import AppSpinner from './AppSpinner'
+import getDataMixin from './../mixins/getDataMixin'
 
 export default {
 	name: 'AppGoogle',
@@ -47,56 +29,17 @@ export default {
 		AppSpinner
 	},
 	mixins: [
-		getDataMixin,
-		setDetailsMixin
+		getDataMixin
 	],
-	data () {
-		return {
-			infoOptions: {
-				pixelOffset: {
-					width: 0,
-					height: -35
-				}
-			}
-		}
-	},
 	methods: {
-		toggleInfoWindow (idx) {
+		initDetails (data) {
 			this.$router.push({
-				query: {id: ++idx}
-			})
-		},
-		closeWindow () {
-			this.$router.push({
-				query: {}
+				name: 'info',
+				params: {
+					id: ++data
+				}
 			})
 		}
 	}
 }
 </script>
-
-<style lang='stylus' scoped>
-	@import './../tools/styles/app.styl'
-	.map
-		&__wrapper
-			display flex
-
-		&__item
-			&_img
-				margin-right 14px
-
-		&__img
-			size(120px, 80px)
-
-			display block
-
-		&__name
-			margin-bottom 6px
-
-			fontSize(20px)
-			font-weight bold
-			color $colorDark
-
-		&__description
-			fontSize(16px, 21px)
-</style>

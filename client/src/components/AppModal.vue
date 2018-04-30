@@ -26,13 +26,14 @@ export default {
 	components: {
 		AppSpinner
 	},
+	props: ['id'],
 	mixins: [
 		setDetailsMixin
 	],
 	methods: {
 		close () {
 			this.$router.push({
-				query: {}
+				path: '/'
 			})
 		}
 	}
